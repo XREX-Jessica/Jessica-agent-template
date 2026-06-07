@@ -58,8 +58,16 @@ export interface TravelPlan {
   breakdown?: { label: string; amount: number }[];
 }
 
-// 請根據你的旅遊計劃修改
-export const TRAVEL_PLANS: TravelPlan[] = [];
+// 請根據你的旅遊計劃修改（示例）
+export const TRAVEL_PLANS: TravelPlan[] = [
+  {
+    id: 'example',
+    month: '2026/12',
+    destination: '範例旅遊',
+    budget: 0,
+    flightPaid: false,
+  },
+];
 
 export const TRAVEL_MONTHLY_ALLOCATION = 2000;
 
@@ -201,8 +209,10 @@ export const HOUSE_PROJECT_SETTLEMENT_DATE   = '2026/06/30';
 export const DRAGONBOAT_TOTAL                = 0;
 export const DRAGONBOAT_REMAINING_FOR_OCTOBER = DRAGONBOAT_TOTAL - HOUSE_PROJECT_DRAGONBOAT_ALLOC;
 
-// 請根據你的未來支出計劃修改
-export const CASH_EVENTS: CashEvent[] = [];
+// 請根據你的未來支出計劃修改（示例）
+export const CASH_EVENTS: CashEvent[] = [
+  { id: 'example', date: '2026/12/31', monthKey: '2026/12', event: '範例支出', amount: 0, type: 'optional', category: 'other' },
+];
 
 export const INSURANCE_EVENTS = CASH_EVENTS.filter(e => e.category === 'insurance');
 export const INSURANCE_TOTAL = INSURANCE_EVENTS.reduce((s, e) => s + e.amount, 0); // 62182
@@ -251,8 +261,18 @@ export interface CashInflow {
   note?: string;
 }
 
-// 請根據你的預期收入修改
-export const CASH_INFLOWS: CashInflow[] = [];
+// 請根據你的預期收入修改（示例）
+export const CASH_INFLOWS: CashInflow[] = [
+  {
+    id: 'example',
+    name: '範例收入',
+    category: 'expected',
+    amount: 0,
+    frequency: 'one-time',
+    expectedMonth: '2026/12',
+    status: 'pending',
+  },
+];
 
 // Compute months of accrued but unreceived subsidy
 export function accruedSubsidy(startMonth: string, currentMonth: string, monthly: number): number {
@@ -271,8 +291,20 @@ export interface CashReceivable {
   note?: string;
 }
 
-// 請根據你的應收款項修改
-export const CASH_RECEIVABLES: CashReceivable[] = [];
+// 請根據你的應收款項修改（示例）
+export const CASH_RECEIVABLES: CashReceivable[] = [
+  {
+    id: 'example',
+    name: '範例應收款',
+    frequency: 'one-time',
+    parties: [
+      { name: '範例', amount: 0 },
+    ],
+    settlements: [
+      { period: '範例', date: '2026/12/31', amount: 0 },
+    ],
+  },
+];
 
 // Sum settlements whose date falls strictly before cutoffMonth (e.g. "2026/10")
 export function receivablesBefore(cutoffMonth: string): number {
@@ -298,5 +330,13 @@ export interface InternalBalance {
   note?: string;
 }
 
-// 請根據你的內部帳戶修改
-export const INTERNAL_BALANCES: InternalBalance[] = [];
+// 請根據你的內部帳戶修改（示例）
+export const INTERNAL_BALANCES: InternalBalance[] = [
+  {
+    id: 'example',
+    name: '範例帳戶',
+    currentBalance: 0,
+    expectedBalance: 0,
+    targetDate: '2026/12',
+  },
+];

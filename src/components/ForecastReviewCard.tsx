@@ -3,8 +3,10 @@ import { ForecastReview, ForecastActualEntry, fmt } from '../types';
 
 const STORAGE_KEY = 'jfos_forecast_review_oct2026';
 
-// 請根據你的預測項目修改
-const FORECAST_ITEMS: { id: string; label: string; forecast: number }[] = [];
+// 請根據你的預測項目修改（示例）
+const FORECAST_ITEMS: { id: string; label: string; forecast: number }[] = [
+  { id: 'example', label: '範例預測', forecast: 0 },
+];
 
 function loadReview(): ForecastReview {
   try {
