@@ -16,26 +16,19 @@ export interface MonthlyRecord {
 export type RecoveryStatus = 'baseline' | 'increasing' | 'decreasing' | 'flat';
 
 // ── Fixed commitments ────────────────────────────────────────────────────────
-// 請根據你的實際情況修改以下數字
+// 請根據你的實際情況修改以下數字（範例：全部設為 0）
 export const FIXED_COMMITMENTS = 0;
 
 export const FIXED_BREAKDOWN = [
-  { label: '房貸＋頭期款', amount: 0 },
-  { label: '房租',         amount: 0 },
-  { label: '信貸',         amount: 0 },
-  { label: '學貸',         amount: 0 },
+  { label: '範例項目1', amount: 0 },
 ] as const;
 
 // ── Fixed monthly allocations ────────────────────────────────────────────────
-// 請根據你的實際情況修改以下數字
+// 請根據你的實際情況修改以下數字（範例：全部設為 0）
 export const FIXED_ALLOCATIONS = 0;
 
 export const ALLOCATION_BREAKDOWN = [
-  { label: '備用金',   amount: 0 },
-  { label: '學習',     amount: 0 },
-  { label: '旅遊金',   amount: 0 },
-  { label: '保教30健', amount: 0 },
-  { label: '娛樂費',   amount: 0 },
+  { label: '範例項目1', amount: 0 },
 ] as const;
 
 // ── Milestones ───────────────────────────────────────────────────────────────
