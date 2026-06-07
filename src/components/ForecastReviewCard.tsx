@@ -4,11 +4,11 @@ import { ForecastReview, ForecastActualEntry, fmt } from '../types';
 const STORAGE_KEY = 'jfos_forecast_review_oct2026';
 
 const FORECAST_ITEMS: { id: string; label: string; forecast: number }[] = [
-  { id: 'dragon-boat',     label: '端午節獎金',             forecast: 52000 },
-  { id: 'mid-autumn',      label: '中秋節獎金',             forecast: 52000 },
-  { id: 'q2-settlement',   label: 'Q2 House Settlement',   forecast: 22000 },
-  { id: 'q3-settlement',   label: 'Q3 House Settlement',   forecast: 22000 },
-  { id: 'housing-subsidy', label: 'Housing Subsidy（應計）', forecast: 24000 },
+  { id: 'bonus-1',         label: '季度獎金',               forecast: 50000 },
+  { id: 'bonus-2',         label: '年中獎金',               forecast: 50000 },
+  { id: 'q2-settlement',   label: 'Q2 Shared Settlement',  forecast: 25000 },
+  { id: 'q3-settlement',   label: 'Q3 Shared Settlement',  forecast: 25000 },
+  { id: 'subsidy',         label: 'Housing Subsidy（應計）', forecast: 25000 },
 ];
 
 function loadReview(): ForecastReview {

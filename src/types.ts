@@ -16,24 +16,24 @@ export interface MonthlyRecord {
 export type RecoveryStatus = 'baseline' | 'increasing' | 'decreasing' | 'flat';
 
 // ── Fixed commitments ────────────────────────────────────────────────────────
-export const FIXED_COMMITMENTS = 61879;
+export const FIXED_COMMITMENTS = 60000;
 
 export const FIXED_BREAKDOWN = [
   { label: '房貸＋頭期款', amount: 35000 },
-  { label: '房租',         amount: 21500 },
-  { label: '信貸',         amount: 2566  },
-  { label: '學貸',         amount: 2813  },
+  { label: '房租',         amount: 20000 },
+  { label: '信貸',         amount: 3000  },
+  { label: '學貸',         amount: 2000  },
 ] as const;
 
 // ── Fixed monthly allocations ────────────────────────────────────────────────
-export const FIXED_ALLOCATIONS = 22062;
+export const FIXED_ALLOCATIONS = 22000;
 
 export const ALLOCATION_BREAKDOWN = [
-  { label: '備用金',   amount: 9925 },
-  { label: '學習',     amount: 711  },
+  { label: '備用金',   amount: 10000 },
+  { label: '學習',     amount: 1000  },
   { label: '旅遊金',   amount: 2000 },
-  { label: '保教30健', amount: 5926 },
-  { label: '娛樂費',   amount: 3500 },
+  { label: '保教30健', amount: 6000 },
+  { label: '娛樂費',   amount: 3000 },
 ] as const;
 
 // ── Milestones ───────────────────────────────────────────────────────────────
@@ -58,36 +58,36 @@ export interface TravelPlan {
 
 export const TRAVEL_PLANS: TravelPlan[] = [
   {
-    id: 'yilan',
+    id: 'domestic-1',
     month: '2026/07',
-    destination: '宜蘭',
-    budget: 6000,
+    destination: '國內短途',
+    budget: 5000,
     flightPaid: false,
   },
   {
-    id: 'singapore',
+    id: 'international',
     month: '2026/10',
-    destination: '新加坡',
-    budget: 49639,
+    destination: '海外旅遊',
+    budget: 50000,
     flightPaid: true,
     note: '機票已付',
     breakdown: [
-      { label: '住宿',         amount: 24639 },
-      { label: 'F1 門票',      amount: 20000 },
+      { label: '住宿',         amount: 25000 },
+      { label: '活動門票',      amount: 20000 },
       { label: '食物＋交通',   amount: 5000  },
     ],
   },
   {
-    id: 'chiayi',
+    id: 'domestic-2',
     month: '2026/10',
-    destination: '嘉義三天兩夜',
-    budget: 7000,
+    destination: '國內三天兩夜',
+    budget: 8000,
     flightPaid: false,
   },
   {
-    id: 'hualien',
+    id: 'domestic-3',
     month: '2026/11',
-    destination: '花蓮',
+    destination: '國內週末遊',
     budget: 6000,
     flightPaid: false,
   },
@@ -224,24 +224,24 @@ export interface CashEvent {
 }
 
 // ── House Project Reconciliation ──────────────────────────────────────────────
-export const HOUSE_PROJECT_DIFF              = 70217;
-export const HOUSE_PROJECT_Q2_SETTLEMENT     = 22000;
-export const HOUSE_PROJECT_DRAGONBOAT_ALLOC  = 48217;
-export const HOUSE_PROJECT_RECONCILIATION    = HOUSE_PROJECT_DIFF - HOUSE_PROJECT_Q2_SETTLEMENT; // 48217
+export const HOUSE_PROJECT_DIFF              = 80000;
+export const HOUSE_PROJECT_Q2_SETTLEMENT     = 25000;
+export const HOUSE_PROJECT_DRAGONBOAT_ALLOC  = 55000;
+export const HOUSE_PROJECT_RECONCILIATION    = HOUSE_PROJECT_DIFF - HOUSE_PROJECT_Q2_SETTLEMENT; // 55000
 export const HOUSE_PROJECT_SETTLEMENT_DATE   = '2026/06/30';
-export const DRAGONBOAT_TOTAL                = 52000;
-export const DRAGONBOAT_REMAINING_FOR_OCTOBER = DRAGONBOAT_TOTAL - HOUSE_PROJECT_DRAGONBOAT_ALLOC; // 3783
+export const DRAGONBOAT_TOTAL                = 60000;
+export const DRAGONBOAT_REMAINING_FOR_OCTOBER = DRAGONBOAT_TOTAL - HOUSE_PROJECT_DRAGONBOAT_ALLOC; // 5000
 
 export const CASH_EVENTS: CashEvent[] = [
   { id: 'house-reconciliation', date: '2026/06/30', monthKey: '2026/06', event: '房屋專案對帳（Q2）', amount: HOUSE_PROJECT_DIFF, type: 'required', category: 'house-project' },
-  { id: 'yilan',        date: '2026/07',    monthKey: '2026/07', event: '宜蘭旅遊',          amount: 6000,  type: 'optional',  category: 'travel'    },
-  { id: 'pt',           date: '2026/08',    monthKey: '2026/08', event: '個人訓練課程',       amount: 16000, type: 'required',  category: 'fitness'   },
-  { id: 'ins-global',   date: '2026/09/30', monthKey: '2026/09', event: '全球人壽保費',       amount: 12284, type: 'required',  category: 'insurance' },
-  { id: 'ins-taiwan',   date: '2026/10/01', monthKey: '2026/10', event: '台灣人壽保費',       amount: 19787, type: 'required',  category: 'insurance' },
-  { id: 'singapore',    date: '2026/10',    monthKey: '2026/10', event: '新加坡旅遊',         amount: 49639, type: 'optional',  category: 'travel'    },
-  { id: 'chiayi',       date: '2026/10',    monthKey: '2026/10', event: '嘉義三天兩夜',       amount: 7000,  type: 'optional',  category: 'travel'    },
-  { id: 'ins-mother',   date: '2026/10/17', monthKey: '2026/10', event: '全球人壽保費（母親）', amount: 30111, type: 'required',  category: 'insurance' },
-  { id: 'hualien',      date: '2026/11',    monthKey: '2026/11', event: '花蓮旅遊',           amount: 6000,  type: 'optional',  category: 'travel'    },
+  { id: 'domestic-1',   date: '2026/07',    monthKey: '2026/07', event: '國內短途',          amount: 5000,  type: 'optional',  category: 'travel'    },
+  { id: 'training',     date: '2026/08',    monthKey: '2026/08', event: '個人訓練課程',       amount: 15000, type: 'required',  category: 'fitness'   },
+  { id: 'ins-1',        date: '2026/09/30', monthKey: '2026/09', event: '人壽保費A',          amount: 12000, type: 'required',  category: 'insurance' },
+  { id: 'ins-2',        date: '2026/10/01', monthKey: '2026/10', event: '人壽保費B',          amount: 20000, type: 'required',  category: 'insurance' },
+  { id: 'international',date: '2026/10',    monthKey: '2026/10', event: '海外旅遊',           amount: 50000, type: 'optional',  category: 'travel'    },
+  { id: 'domestic-2',   date: '2026/10',    monthKey: '2026/10', event: '國內三天兩夜',       amount: 8000,  type: 'optional',  category: 'travel'    },
+  { id: 'ins-3',        date: '2026/10/17', monthKey: '2026/10', event: '人壽保費C',          amount: 30000, type: 'required',  category: 'insurance' },
+  { id: 'domestic-3',   date: '2026/11',    monthKey: '2026/11', event: '國內週末遊',         amount: 6000,  type: 'optional',  category: 'travel'    },
 ];
 
 export const INSURANCE_EVENTS = CASH_EVENTS.filter(e => e.category === 'insurance');
@@ -293,29 +293,29 @@ export interface CashInflow {
 
 export const CASH_INFLOWS: CashInflow[] = [
   {
-    id: 'dragon-boat',
-    name: '端午節獎金',
+    id: 'bonus-1',
+    name: '季度獎金',
     category: 'confirmed',
-    amount: 52000,
+    amount: 50000,
     frequency: 'one-time',
     expectedMonth: '2026/06',
     status: 'pending',
   },
   {
-    id: 'mid-autumn',
-    name: '中秋節獎金',
+    id: 'bonus-2',
+    name: '年中獎金',
     category: 'confirmed',
-    amount: 52000,
+    amount: 50000,
     frequency: 'one-time',
     expectedMonth: '2026/09',
     status: 'pending',
     note: '預計 2026/09/25 發放',
   },
   {
-    id: 'housing-subsidy',
+    id: 'subsidy',
     name: '住房補貼',
     category: 'expected',
-    amount: 4800,
+    amount: 5000,
     frequency: 'monthly',
     startMonth: '2026/05',
     status: 'approved-pending',
@@ -342,17 +342,17 @@ export interface CashReceivable {
 
 export const CASH_RECEIVABLES: CashReceivable[] = [
   {
-    id: 'house-settlement',
-    name: '房屋專案結算',
+    id: 'shared-expense',
+    name: '共同支出結算',
     frequency: 'quarterly',
     parties: [
-      { name: '姐姐', amount: 13600 },
-      { name: '妹妹', amount: 8400  },
+      { name: '夥伴A', amount: 15000 },
+      { name: '夥伴B', amount: 10000 },
     ],
     settlements: [
-      { period: 'Q2 2026', date: '2026/06/30', amount: 22000 },
-      { period: 'Q3 2026', date: '2026/09/30', amount: 22000 },
-      { period: 'Q4 2026', date: '2026/12/31', amount: 22000 },
+      { period: 'Q2 2026', date: '2026/06/30', amount: 25000 },
+      { period: 'Q3 2026', date: '2026/09/30', amount: 25000 },
+      { period: 'Q4 2026', date: '2026/12/31', amount: 25000 },
     ],
     note: '先前支出之分攤，每季收回',
   },
@@ -384,10 +384,10 @@ export interface InternalBalance {
 
 export const INTERNAL_BALANCES: InternalBalance[] = [
   {
-    id: 'house-project',
-    name: '房屋專案帳戶',
-    currentBalance: 200469,
-    expectedBalance: 270686,
+    id: 'shared-project',
+    name: '共同專案帳戶',
+    currentBalance: 200000,
+    expectedBalance: 275000,
     targetDate: '2026/12',
     note: '逐步補足，目標 2026 年底達標',
   },

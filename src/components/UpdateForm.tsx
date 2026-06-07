@@ -111,7 +111,7 @@ export function UpdateForm({ latestMonth, onSave }: Props) {
             </div>
             <div>
               <label className={LABEL}>House Account Difference（房屋帳戶差額）</label>
-              <input className={INPUT} type="number" min="0" value={form.houseAccountDiff} onChange={set('houseAccountDiff')} placeholder="70217" />
+              <input className={INPUT} type="number" min="0" value={form.houseAccountDiff} onChange={set('houseAccountDiff')} placeholder="80000" />
             </div>
           </div>
         </div>
