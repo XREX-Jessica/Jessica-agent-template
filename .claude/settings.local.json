@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(schedule)",
+      "WebFetch(domain:www.pymnts.com)",
+      "Bash(npm install *)"
+    ]
+  }
+}

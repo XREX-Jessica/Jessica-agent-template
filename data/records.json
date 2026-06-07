@@ -2,14 +2,14 @@
   {
     "id": "2026-05",
     "month": "2026/05",
-    "income": 104814,
-    "expense": 133373,
-    "reserveFund": 8414,
-    "travelFund": 6784,
-    "entertainFund": 1,
-    "insuranceFund": 10617,
-    "creditAccount": 17318,
+    "income": 100000,
+    "expense": 0,
+    "reserveFund": 50000,
+    "travelFund": 30000,
+    "entertainFund": 20000,
+    "insuranceFund": 15000,
+    "creditAccount": 5000,
     "isBaseline": true,
-    "note": "搬家與家裡花費，非正常月份"
+    "note": "示例數據 - 請替換為真實資料"
   }
 ]
