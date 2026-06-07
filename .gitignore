@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+
+# Build output (GitHub Actions will build it)
+dist
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# Personal files - NOT for git
+*.pptx
+*.txt
+ig_scraper.py
+ISO_20022.md
+XREX-Plugin-Commands.md
+kyb-dashboard/
+kyb-ops-dashboard-prototype/
+Claude_cowork/
+weekly-*.md
+outo_*.txt
+*_journey.txt
+www.instagram.com_json_*.json
+Fintech_*.txt
+MOZE_*.csv
+
+# Temp/cache
+.playwright-mcp/
+.claude/scheduled_tasks.lock
