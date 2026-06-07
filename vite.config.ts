@@ -12,7 +12,7 @@ function ensureDir() {
 }
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/Jessica-agent/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/Jessica-agent-template/' : '/',
   plugins: [
     react(),
     {
