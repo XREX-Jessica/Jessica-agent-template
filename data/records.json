@@ -2,14 +2,14 @@
   {
     "id": "2026-05",
     "month": "2026/05",
-    "income": 100000,
+    "income": 0,
     "expense": 0,
-    "reserveFund": 50000,
-    "travelFund": 30000,
-    "entertainFund": 20000,
-    "insuranceFund": 15000,
-    "creditAccount": 5000,
+    "reserveFund": 0,
+    "travelFund": 0,
+    "entertainFund": 0,
+    "insuranceFund": 0,
+    "creditAccount": 0,
     "isBaseline": true,
-    "note": "示例數據 - 請替換為真實資料"
+    "note": "空白模板 - 請填入你的真實數據"
   }
 ]

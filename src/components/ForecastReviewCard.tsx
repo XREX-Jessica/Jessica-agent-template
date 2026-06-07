@@ -3,13 +3,8 @@ import { ForecastReview, ForecastActualEntry, fmt } from '../types';
 
 const STORAGE_KEY = 'jfos_forecast_review_oct2026';
 
-const FORECAST_ITEMS: { id: string; label: string; forecast: number }[] = [
-  { id: 'bonus-1',         label: '季度獎金',               forecast: 50000 },
-  { id: 'bonus-2',         label: '年中獎金',               forecast: 50000 },
-  { id: 'q2-settlement',   label: 'Q2 Shared Settlement',  forecast: 25000 },
-  { id: 'q3-settlement',   label: 'Q3 Shared Settlement',  forecast: 25000 },
-  { id: 'subsidy',         label: 'Housing Subsidy（應計）', forecast: 25000 },
-];
+// 請根據你的預測項目修改
+const FORECAST_ITEMS: { id: string; label: string; forecast: number }[] = [];
 
 function loadReview(): ForecastReview {
   try {
