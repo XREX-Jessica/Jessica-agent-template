@@ -1,0 +1,15 @@
+[
+  {
+    "id": "2026-05",
+    "month": "2026/05",
+    "income": 0,
+    "expense": 0,
+    "reserveFund": 0,
+    "travelFund": 0,
+    "entertainFund": 0,
+    "insuranceFund": 0,
+    "creditAccount": 0,
+    "isBaseline": true,
+    "note": "空白模板 - 請填入你的真實數據"
+  }
+]
