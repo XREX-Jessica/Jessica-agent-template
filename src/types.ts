@@ -62,7 +62,7 @@ export const TRAVEL_PLANS: TravelPlan[] = [
   },
 ];
 
-export const TRAVEL_MONTHLY_ALLOCATION = 2000;
+export const TRAVEL_MONTHLY_ALLOCATION = 0; // 範例模板
 
 // ── Direction config (no traffic-light colors) ───────────────────────────────
 export interface DirectionConfig {
@@ -208,9 +208,9 @@ export const CASH_EVENTS: CashEvent[] = [
 ];
 
 export const INSURANCE_EVENTS = CASH_EVENTS.filter(e => e.category === 'insurance');
-export const INSURANCE_TOTAL = INSURANCE_EVENTS.reduce((s, e) => s + e.amount, 0); // 62182
-export const INSURANCE_MONTHLY_ALLOC = 5926; // from fixed allocations
-export const INSURANCE_FIRST_MONTH = '2026/09'; // earliest insurance month
+export const INSURANCE_TOTAL = INSURANCE_EVENTS.reduce((s, e) => s + e.amount, 0);
+export const INSURANCE_MONTHLY_ALLOC = 0; // 範例模板
+export const INSURANCE_FIRST_MONTH = '2026/09';
 
 // Project the insurance protection fund to the month of first payment
 export function projectedInsuranceFund(currentFund: number, currentMonth: string): number {
