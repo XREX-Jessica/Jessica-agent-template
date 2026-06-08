@@ -26,25 +26,25 @@ interface Props {
 export function OctoberForecastCard({ currentRecord }: Props) {
   const [showAssumptions, setShowAssumptions] = useState(false);
 
-  const sgpEvent       = CASH_EVENTS.find(e => e.id === 'singapore')!;
-  const chiyaEvent     = CASH_EVENTS.find(e => e.id === 'chiayi')!;
-  const dragonBoat     = CASH_INFLOWS.find(i => i.id === 'dragon-boat')!;
-  const midAutumn      = CASH_INFLOWS.find(i => i.id === 'mid-autumn')!;
-  const housingSubsidy = CASH_INFLOWS.find(i => i.id === 'housing-subsidy')!;
+  const sgpEvent       = CASH_EVENTS.find(e => e.id === 'international') || CASH_EVENTS[0];
+  const chiyaEvent     = CASH_EVENTS.find(e => e.id === 'domestic-2') || CASH_EVENTS[0];
+  const dragonBoat     = CASH_INFLOWS.find(i => i.id === 'bonus-1') || CASH_INFLOWS[0];
+  const midAutumn      = CASH_INFLOWS.find(i => i.id === 'bonus-2') || CASH_INFLOWS[0];
+  const housingSubsidy = CASH_INFLOWS.find(i => i.id === 'subsidy') || CASH_INFLOWS[0];
   const houseRec       = CASH_RECEIVABLES[0];
 
   // Required
-  const totalRequired = INSURANCE_TOTAL + sgpEvent.amount + chiyaEvent.amount;
+  const totalRequired = INSURANCE_TOTAL + (sgpEvent?.amount || 0) + (chiyaEvent?.amount || 0);
 
   // Confirmed sources — Dragon Boat remaining + Mid-Autumn + Q3 settlement
   const insProjected    = projectedInsuranceFund(currentRecord.insuranceFund, currentRecord.month);
   const sgpProjected    = projectedSingaporeFund(currentRecord.travelFund, currentRecord.month);
-  const q3Amount        = houseRec.settlements[1].amount ?? 0;
-  const confirmedTotal  = insProjected + sgpProjected + DRAGONBOAT_REMAINING_FOR_OCTOBER + midAutumn.amount + q3Amount;
+  const q3Amount        = houseRec?.settlements?.[1]?.amount ?? 0;
+  const confirmedTotal  = insProjected + sgpProjected + DRAGONBOAT_REMAINING_FOR_OCTOBER + (midAutumn?.amount || 0) + q3Amount;
 
   // Expected
-  const housingProjected = housingSubsidy.startMonth
-    ? accruedSubsidy(housingSubsidy.startMonth, '2026/09', housingSubsidy.amount)
+  const housingProjected = housingSubsidy?.startMonth
+    ? accruedSubsidy(housingSubsidy.startMonth, '2026/09', housingSubsidy.amount || 0)
     : 0;
 
   // Positions
@@ -203,31 +203,31 @@ export function OctoberForecastCard({ currentRecord }: Props) {
             </div>
 
             <div>
-              <p className="text-xs font-medium text-slate-600 mb-1">Dragon Boat Festival Bonus</p>
+              <p className="text-xs font-medium text-slate-600 mb-1">Bonus 1</p>
               <div className="space-y-1 pl-2">
                 <div className="flex justify-between text-xs text-slate-400">
-                  <span>Total Amount（{dragonBoat.expectedMonth}）</span>
+                  <span>Total Amount（{dragonBoat?.expectedMonth || 'TBD'}）</span>
                   <span className="tabular-nums">{fmt(DRAGONBOAT_TOTAL)}</span>
                 </div>
                 <div className="flex justify-between text-xs text-slate-400">
-                  <span>Allocated to House Project</span>
+                  <span>Allocated to Project</span>
                   <span className="tabular-nums">− {fmt(HOUSE_PROJECT_DRAGONBOAT_ALLOC)}</span>
                 </div>
                 <div className="flex justify-between text-xs font-medium text-slate-600">
-                  <span>Remaining Available for October</span>
+                  <span>Remaining Available</span>
                   <span className="tabular-nums">{fmt(DRAGONBOAT_REMAINING_FOR_OCTOBER)}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-medium text-slate-600 mb-1">Mid-Autumn Festival Bonus</p>
+              <p className="text-xs font-medium text-slate-600 mb-1">Bonus 2</p>
               <div className="space-y-1 pl-2">
                 <div className="flex justify-between text-xs text-slate-400">
-                  <span>Amount（{midAutumn.expectedMonth}）</span>
-                  <span className="tabular-nums">{fmt(midAutumn.amount)}</span>
+                  <span>Amount（{midAutumn?.expectedMonth || 'TBD'}）</span>
+                  <span className="tabular-nums">{fmt(midAutumn?.amount || 0)}</span>
                 </div>
-                <p className="text-xs text-slate-400">預計 2026/09/25 發放，完全可用於 October</p>
+                <p className="text-xs text-slate-400">範例說明文字</p>
               </div>
             </div>
 
